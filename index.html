@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+        width: 450px;
+        margin: 20% auto;
+        border: 1px solid black;
+        padding: 1rem;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .inputs input {
+        border: 1px solid black;
+        padding: 1rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    input[type="submit"] {
+        margin-top: 1rem;
+        background-color: black;
+        padding: 1rem 2rem;
+        width: 100%;
+        color: white;
+        font-size: 1.8rem;
+        border: 0;
+    }
+</style>
+
+<body>
+    <form name="verify">
+        <div class="inputs">
+            <input type="text" name="n1" maxlength="1" />
+            <input type="text" name="n2" maxlength="1" />
+            <input type="text" name="n3" maxlength="1" />
+            <input type="text" name="n4" maxlength="1" />
+            <input type="text" name="n5" maxlength="1" />
+            <input type="text" name="n6" maxlength="1" />
+        </div>
+        <input type="submit" value="Verify" />
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>
