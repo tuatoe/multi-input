@@ -6,6 +6,8 @@ function handleInput(e) {
     const input = e.target;
     if (input.nextElementSibling && input.value) {
         input.nextElementSibling.focus()
+        //select the text when the next input is focused
+        input.nextElementSibling.select()
     }
 }
 
@@ -13,12 +15,16 @@ function handleInput(e) {
 function handlePaste(e) {
     const paste = e.clipboardData.getData('text');
     //loop over each input, and populate with the index of that string
-    inputs.forEach((input, i) => input.value = paste[i] || '')
-    console.log(paste)
+    inputs.forEach((input, i) => {
+        input.value = paste[i] || '';
+        //auto submit the for if all fields are filled after a paste
+        if (input.value !== '') {
+            form.submit()
+        }
+    })
+
 }
 
 inputs[0].addEventListener('paste', handlePaste)
 form.addEventListener('input', handleInput)
 
-//select the text when the next input is focused
-//auto submit the for if all fields are filled after a paste
